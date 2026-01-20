@@ -1,0 +1,39 @@
+<h2>Employees List</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+  </tr>
+  @for (employee of employees; track employee.id) {
+  <tr class="border-b">
+    <td class="py-2 px-4 text center">{{ employee.id}}</td>
+    <td class="py-2 px-4 text center">{{ employee.firstname}}</td>
+    <td class="py-2 px-4 text center">{{ employee.lastname}}</td>
+    <td class="py-2 px-4 text center">{{ employee.email}}</td>
+  </tr>
+}
+</table>
+
+<h2>Products List</h2>
+<table>
+  <tr>
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+
+  @for (product of products; track product.pid) {
+    <tr class="border-b">
+      <td class="py-2 px-4 text-center">P-{{ product.pid }}</td>
+      <td class="py-2 px-4 text-center">{{ product.productname }}</td>
+      <td class="py-2 px-4 text-center">{{ product.description }}</td>
+      <td class="py-2 px-4 text-center">₱{{ product.price }}</td>
+    </tr>
+  }
+</table>
+
+
+<router-outlet />
